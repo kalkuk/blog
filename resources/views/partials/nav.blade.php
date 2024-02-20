@@ -13,6 +13,21 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('about') }}">About</a>
                 </li>
+                @auth
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Admin
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('articles.index') }}">Articles</a>
+                            </li>
+                        </li>
+                    </ul>
+                </li>
+                @endauth
             </ul>
             <ul class="navbar-nav ms-auto gap-2">
                 @guest
