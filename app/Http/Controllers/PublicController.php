@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class PublicController extends Controller
 {
    public function home() {
-    return view('welcome');
+    $articles = Article::paginate(12) ;
+    // dd($articles->toArray());
+    return view('welcome', compact('articles'));
+    // return view('welcome', ['articles' => $articles]);
    }
 
    public function about() {

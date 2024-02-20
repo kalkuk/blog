@@ -8,10 +8,10 @@
     @vite('resources/css/app.scss')
 </head>
 <body>
-    <div class="container my-2">
+
     @include('partials.nav')
    @yield('content')
    @vite('resources/js/app.js')
-    </div>
+
 </body>
 </html>
