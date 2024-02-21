@@ -16,5 +16,23 @@
                 </div>
             </div>
         </div>
+        <h5 class="my-2">Comments:</h5>
+        <div class="card h-100 my-2">
+            <div class="card-body">
+                <form action="{{route('comment', ['article' =>$article])}}" method="POST">
+                    @csrf
+                    <textarea name="body" placeholder="Write something..." id="body"  class="form-control"></textarea>
+                    <input type="submit" class="btn btn-primary mt-2">
+                </form>
+            </div>
+        </div>
+        @foreach($article->comments as $comment)
+        <div class="card h-100 my-2">
+            <div class="card-body">
+                <p class="card-text">{{$comment->body}}</p>
+                <p class="text-body-secondary small">{{ $comment->user->name}}</p>
+            </div>
+        </div>
+        @endforeach
     </div>
 @endsection

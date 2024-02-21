@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',  [PublicController::class, 'home'])->name('index');
 Route::get('/user/{user}',  [PublicController::class, 'user'])->name('user');
 Route::get('/article/{article}',  [PublicController::class, 'article'])->name('article');
+Route::post('/article/{article}',  [PublicController::class, 'comment'])->name('comment')->middleware('auth');
 Route::get('/about',  [PublicController::class, 'about'])->name('about');
 
 Route::get('/admin/articles', [ArticleController::class, 'index'])->name('articles.index');

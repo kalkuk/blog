@@ -12,10 +12,14 @@
                     <div class="card-body d-flex flex-column">
                       <h5 class="card-title text-center">{{ $article->title }}</h5>
                       <p class="card-text">{{ $article->snippet }}</p>
-                      <p class="text-body-secondary text-center">
-                        <a href="{{route('user', ['user' => $article->user])}}">{{ $article->user->name}}</a>
-                      </p>
                       <div class="text-center mt-auto">
+                        <p class="text-body-secondary">
+                            <a href="{{route('user', ['user' => $article->user])}}">{{ $article->user->name}}</a>
+                        </p>
+                        <p class="text-body-secondary">
+                        <b>Comments: </b>{{$article->comments()->count()}}
+                        </p>
+
                         <a href="{{route('article', ['article' => $article])}}" class="btn btn-outline-primary ">Read more</a>
                       </div>
 
