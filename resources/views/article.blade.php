@@ -7,10 +7,13 @@
             @if($article->image)
                 <img src="{{$article->image}}" class="card-img-top" alt="...">
             @endif
-            <div class="card-body">
-                <h5 class="card-title">{{ $article->title }}</h5>
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title text-center">{{ $article->title }}</h5>
                 <p class="card-text">{!! nl2br($article->body) !!}</p>
-                <a href="{{ route('index') }}" class="btn btn-outline-primary">Back</a>
+                <p class="text-body-secondary text-center">{{ $article->user->name}}</p>
+                <div class="text-center mt-auto">
+                    <a href="{{ route('index') }}" class="btn btn-outline-primary">Back</a>
+                </div>
             </div>
         </div>
     </div>
