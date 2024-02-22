@@ -27,7 +27,9 @@
                 </div>
             </div>
         @endforeach
-        {{$articles->links()}}
+            <div class="d-flex align-items-center justify-content-center">
+                {{$articles->links()}}
+            </div>
     </div>
 @endsection
 
